@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <script>
+        // Função para validar campos e aplicar bordas vermelha ou verde
+        function validateField(input) {
+            if (input.value.trim() === "") {
+                input.classList.add('erro');  // Borda vermelha
+                input.classList.remove('valido');
+            } else {
+                input.classList.remove('erro');
+                input.classList.add('valido');  // Borda verde
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="/" method="post">
+            <input type="email" name="email" class="validar" placeholder="E-mail" required onblur="validateField(this)">
+            <input type="password" name="password" class="validar" placeholder="Senha" required onblur="validateField(this)">
+            <button type="submit">Entrar</button>
+        </form>
+
+        <!-- 🔗 Link para redefinir senha -->
+        <p style="margin-top: 10px;">
+            <a href="/redefinir_senha">Esqueci minha senha</a>
+        </p>
+
+        <!-- 🔗 Link para cadastro -->
+        <p>
+            <a href="/cadastro">Não tem conta? Cadastre-se</a>
+        </p>
+
+        {% if mensagem %}
+        <p>{{ mensagem }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

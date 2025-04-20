@@ -1,0 +1,1085 @@
+/* ============================
+   Resetando o estilo para garantir consistência
+   ============================ */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================
+   Estilo geral do corpo
+   ============================ */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* ============================
+   Estilo do contêiner principal
+   ============================ */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.);
+    border-radius: 8px;
+}
+
+/* ============================
+   Estilo dos Títulos
+   ============================ */
+h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+/* ============================
+   Estilo do parágrafo de ajuda
+   ============================ */
+p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ============================
+   Estilo do contêiner dos botões
+   ============================ */
+.button-container {
+    display: flex;
+    flex-direction: column; /* Empilhando os botões */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* ============================
+   Estilo para os botões
+   ============================ */
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    max-width: 250px; /* Limita a largura máxima */
+    height: 50px; /* Definindo a altura para todos os botões */
+}
+
+/* ============================
+   Efeito hover para os botões
+   ============================ */
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn:active {
+    background-color: #003f7f;
+}
+
+/* ============================
+   Estilo para o botão de logout (vermelho)
+   ============================ */
+.btn-logout {
+    background-color: #dc3545;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+
+.btn-logout:active {
+    background-color: #bd2130;
+}
+
+/* ============================
+   Estilos para os campos com bordas vermelhas e verdes
+   ============================ */
+.erro {
+    border: 2px solid red;
+}
+
+.valido {
+    border: 2px solid green;
+}
+
+/* ============================
+   Estilo para o formulário de filtros
+   ============================ */
+.filter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-form select, 
+.filter-form input, 
+.filter-form button {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filter-form button {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-form button:hover {
+    background-color: #0056b3;
+}
+
+/* ============================
+   Estilos para o popup
+   ============================ */
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -25%);
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgb(85, 23, 201);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    width: 300px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.popup button {
+    margin-top: 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup button:hover {
+    background-color: #218838;
+}
+
+/* ============================
+   Botões de opções no mesmo popup
+   ============================ */
+.popup .options button {
+    background-color: #007bff;
+    color: white;
+    margin-top: 10px;
+}
+
+.popup .options button:hover {
+    background-color: #0056b3;
+}
+
+/* ============================
+   Estilo do formulário de agendamento
+   ============================ */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================
+   Estilo dos campos de entrada (inputs) e botões
+   ============================ */
+input, select, button {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* ============================
+   Estilo do botão de submit
+   ============================ */
+button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    height: 50px;
+    width: 100%;
+    max-width: 250px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #003f7f;
+}
+
+/* ============================
+   Design responsivo para dispositivos móveis
+   ============================ */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    input, select, button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* ============================
+   Estilo para os botões de opções na tela de sucesso
+   ============================ */
+.button-container {
+    display: flex;
+    flex-direction: column; /* Empilhando os botões */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    max-width: 250px; /* Limita a largura máxima */
+    height: 50px; /* Definindo a altura para todos os botões */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn:active {
+    background-color: #003f7f;
+}
+
+.btn-logout {
+    background-color: #dc3545;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+
+.btn-logout:active {
+    background-color: #bd2130;
+}
+
+/* ============================
+   Estilo do contêiner de histórico
+   ============================ */
+.historico-container {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================
+   Estilo da tabela de consultas
+   ============================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ============================
+   Estilo do formulário de filtro
+   ============================ */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.filter-form input, .filter-form button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filter-form button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.filter-form button:hover {
+    background-color: #0056b3;
+}
+
+
+/* ============================
+   Resetando o estilo para garantir consistência
+   ============================ */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================
+   Estilo geral do corpo
+   ============================ */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* ============================
+   Estilo do contêiner principal
+   ============================ */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* ============================
+   Estilo dos Títulos
+   ============================ */
+h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+/* ============================
+   Estilo do formulário de filtro
+   ============================ */
+.filter-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-form input, .filter-form button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filter-form button {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-form button:hover {
+    background-color: #0056b3;
+}
+
+/* ============================
+   Estilo da tabela de histórico
+   ============================ */
+.historico-container {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table td {
+    word-wrap: break-word;
+}
+
+/* ============================
+   Design responsivo para dispositivos móveis
+   ============================ */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .filter-form input, .filter-form button {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+
+/* ============================
+   Estilo para o formulário de filtro
+   ============================ */
+   .filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-form select, .filter-form input, .filter-form button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.filter-form select {
+    max-width: 250px; /* Limita o tamanho do select */
+}
+
+.filter-form button {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-form button:hover {
+    background-color: #0056b3;
+}
+
+/* ============================
+   Estilo da tabela de histórico
+   ============================ */
+.historico-container {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table td {
+    word-wrap: break-word;
+}
+/* Resetando o estilo para garantir consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Estilo do contêiner principal */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Estilo do título */
+h1 {
+    color: #007BFF;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Estilo do parágrafo */
+p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os botões */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Botões em estilo consistente */
+.btn, .btn-logout {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    max-width: 250px;
+    height: 50px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover e active para o botão */
+.btn:hover, .btn-logout:hover {
+    background-color: #0056b3;
+}
+
+.btn:active, .btn-logout:active {
+    background-color: #003f7f;
+}
+
+/* Estilo para o botão de logout (vermelho) */
+.btn-logout {
+    background-color: #dc3545;
+}
+
+/* Alerta de notificação */
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Design responsivo para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .btn, .btn-logout {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+/* Estilo para os botões na consulta virtual */
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn:active {
+    background-color: #003f7f;
+}
+
+/* Estilo para o botão de logout */
+.btn-logout {
+    background-color: #dc3545;
+    color: white;
+    width: 100%;
+    max-width: 250px;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+
+.btn-logout:active {
+    background-color: #bd2130;
+}
+
+/* Layout para os botões */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ============================
+   Estilo geral do corpo
+   ============================ */
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* ============================
+   Estilo para o container da página
+   ============================ */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* ============================
+   Estilo para a tela de videochamada
+   ============================ */
+.video-container {
+    width: 100%;
+    height: 400px;
+    background-color: #d3d3d3;  /* Cor de fundo simulando uma tela de videochamada */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.video-screen {
+    width: 90%;
+    height: 90%;
+    background-color: #333;
+    border-radius: 10px;
+    position: relative;
+}
+
+.video-placeholder {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 400px; /* Centraliza o texto na tela */
+}
+
+/* ============================
+   Estilo para os botões
+   ============================ */
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn:active {
+    background-color: #003f7f;
+}
+
+/* ============================
+   Estilo para o botão de logout
+   ============================ */
+.btn-logout {
+    background-color: #dc3545;
+    color: white;
+    width: 100%;
+    max-width: 250px;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+
+.btn-logout:active {
+    background-color: #bd2130;
+}
+
+/* ============================
+   Layout para os botões
+   ============================ */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ============================
+   Estilo para o texto e título
+   ============================ */
+h1 {
+    font-size: 2rem;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* ============================
+   Estilo responsivo para dispositivos móveis
+   ============================ */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .btn {
+        width: 90%;
+    }
+}
+/* ============================
+   Estilo geral do corpo
+   ============================ */
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* ============================
+   Estilo para o container da página
+   ============================ */
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 50px;
+    text-align: center;
+    position: relative; /* Para posicionar os botões corretamente */
+}
+
+/* ============================
+   Bloco para videochamada e controles
+   ============================ */
+.video-chat-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* ============================
+   Estilo para a tela de videochamada
+   ============================ */
+.video-container {
+    width: 70%;  /* A tela de vídeo ocupa 70% da largura */
+    height: 500px;
+    background-color: #d3d3d3;  /* Cor de fundo simulando uma tela de videochamada */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-right: 20px;
+}
+
+.video-screen {
+    width: 95%;
+    height: 90%;
+    background-color: #333;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-placeholder {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 300px; /* Centraliza o texto na tela */
+}
+
+/* ============================
+   Estilo para os botões de controle
+   ============================ */
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 28%;  /* Botões ocupam 28% da largura */
+    height: 500px;
+    justify-content: space-around;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 180px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn:active {
+    background-color: #003f7f;
+}
+
+.toggle-btn {
+    background-color: #28a745;
+}
+
+.toggle-btn:hover {
+    background-color: #218838;
+}
+
+/* ============================
+   Estilo para o botão de logout
+   ============================ */
+.btn-logout {
+    background-color: #dc3545;
+    color: white;
+    width: 100%;
+    max-width: 180px;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+
+.btn-logout:active {
+    background-color: #bd2130;
+}
+
+/* ============================
+   Layout para os botões
+   ============================ */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ============================
+   Estilo para os botões de ação (Voltar e Sair)
+   ============================ */
+.action-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ============================
+   Estilo para o texto e título
+   ============================ */
+h1 {
+    font-size: 2rem;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* ============================
+   Estilo responsivo para dispositivos móveis
+   ============================ */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .video-container {
+        height: 300px; /* Ajusta a altura para dispositivos móveis */
+    }
+
+    .video-placeholder {
+        font-size: 16px;
+    }
+
+    .controls-container {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .video-chat-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+.filter-form button:hover {
+    background-color: #0056b3;
+}
+
+.filter-form button:active {
+    background-color: #003f7f;
+}
+.btn, .btn-logout {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover, .btn-logout:hover {
+    transform: translateY(-3px);
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Telemedicina</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <!-- Apenas links comuns a todas as páginas, sem o 'Perfil' -->
+        <nav>
+            <!-- Links de navegação comuns a todas as páginas -->
+        </nav>
+    </header>
+
+    <!-- Conteúdo da página será substituído pelo conteúdo do template que herda este -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

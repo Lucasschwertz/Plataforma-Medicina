@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Consulta</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Agendar Consulta</h1>
+
+        <form action="/agendar" method="post">
+            <!-- Campo para escolher o médico -->
+            <label for="medico">Escolha o Médico</label>
+            <select name="medico" required onblur="validateCampo(this)">
+                <option value="Escolha">Escolha</option>
+                <option value="Dr. Médico 01">Dr. Médico 01</option>
+                <option value="Dra. médica 01">Dra. Médica 01</option>
+                <option value="Dr. Médico 02">Dr. Médico 02</option>
+                <option value="Dra. médica 02">Dra. Médica 02</option>
+                <option value="Dr. Médico 03">Dr. Médico 03</option>
+                <option value="Dra. médica 03">Dra. Médica 03</option>
+                <option value="Dr. Médico 04">Dr. Médico 04</option>
+                <option value="Dra. médica 04">Dra. Médica 04</option>
+                <option value="Dr. Médico 05">Dr. Médico 05</option>
+                <option value="Dra. médica 05">Dra. Médica 05</option>
+                <option value="Dr. Médico 06">Dr. Médico 06</option>
+                <option value="Dra. médica 06">Dra. Médica 06</option>
+                <!-- Adicione outros médicos conforme necessário -->
+            </select>
+        
+<!-- Campo para escolher o tipo de consulta -->
+<label for="tipo_consulta">Escolha o Tipo de Consulta</label>
+<select name="tipo_consulta" required onblur="validateCampo(this)">
+    <option value="Consulta de Rotina">Consulta de Rotina</option>
+    <option value="Emergência">Emergência</option>
+    <option value="Exame de Laboratório">Exame de Laboratório</option>
+    <!-- Novos tipos de consulta -->
+    <option value="Diagnóstico">Diagnóstico</option>
+    <option value="Tratamento">Tratamento</option>
+    <option value="Monitoramento da saúde">Monitoramento da saúde</option>
+    <option value="Prevenção">Prevenção</option>
+    <option value="Educação do paciente">Educação do paciente</option>
+    <option value="Monitoramento de doenças crônicas">Monitoramento de doenças crônicas</option>
+    <option value="Fortalecimento da relação médico-paciente">Fortalecimento da relação médico-paciente</option>
+    <option value="Consulta geral">Consulta geral</option>
+    <option value="Consultas com especialistas">Consultas com especialistas</option>
+    <option value="Consulta de segunda opinião">Consulta de segunda opinião</option>
+    <option value="Check-ups de rotina">Check-ups de rotina</option>
+    <option value="Consultas de diagnóstico">Consultas de diagnóstico</option>
+    <option value="Consultas pré-operatórias">Consultas pré-operatórias</option>
+</select>
+
+        
+            <!-- Campo para escolher a data -->
+            <label for="data">Escolha a Data</label>
+            <input type="date" name="data" required onblur="validateData(this)">
+            <br>
+        
+            <!-- Campo para escolher o horário -->
+            <label for="horario">Escolha o Horário</label>
+            <input type="time" name="horario" required onblur="validateHora(this)">
+            <br>
+        
+            <!-- Campo para nome do paciente -->
+            <label for="paciente">Nome do Paciente</label>
+            <input type="text" name="paciente" placeholder="Nome do paciente" required onblur="validateCampo(this)">
+            <br>
+        
+            <!-- Campo de observações -->
+            <label for="observacoes">Observações</label>
+            <textarea name="observacoes" placeholder="Observações sobre o agendamento" rows="4" required onblur="validateCampo(this)"></textarea>
+            <br>
+        
+            <button type="submit">Agendar</button>
+        </form>
+        
+    </div>
+
+    <!-- Popup de erro -->
+    <div id="popup" class="popup">
+        <p id="popup-message"></p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+
+    <script>
+        let dataFutura = false; // Variável para verificar se a data é futura
+
+// Função para validar a data
+function validateData(input) {
+    if (input.value.trim() === "") {
+        input.classList.add('erro');
+        input.classList.remove('valido');
+        dataFutura = false; // Resetar estado
+        showPopup("A data é obrigatória.");
+        return;
+    }
+
+    var dataAtual = new Date();
+    var dataSelecionada = new Date(input.value);
+
+    if (isNaN(dataSelecionada.getTime()) || dataSelecionada < dataAtual) {
+        showPopup("A data do agendamento não pode ser no passado.");
+        input.classList.add('erro');
+        input.classList.remove('valido');
+        dataFutura = false; // Resetar estado
+    } else {
+        input.classList.remove('erro');
+        input.classList.add('valido');
+        dataFutura = true; // Definir como futura
+    }
+}
+
+// Função para validar a hora
+function validateHora(input) {
+    if (input.value.trim() === "") {
+        input.classList.add('erro');
+        input.classList.remove('valido');
+        showPopup("O horário é obrigatório.");
+        return;
+    }
+
+    var horaAtual = new Date();
+    var horaSelecionada = new Date('1970-01-01T' + input.value + 'Z');
+
+    if (!dataFutura && (isNaN(horaSelecionada.getTime()) || horaSelecionada < horaAtual)) {
+        showPopup("O horário do agendamento não pode ser no passado.");
+        input.classList.add('erro');
+        input.classList.remove('valido');
+    } else {
+        input.classList.remove('erro');
+        input.classList.add('valido');
+    }
+}
+
+// Função para validar campos genéricos (nome, tipo de consulta, etc.)
+function validateCampo(input) {
+    if (input.value.trim() === "") {
+        input.classList.add('erro');
+        input.classList.remove('valido');
+        showPopup("Este campo é obrigatório.");
+    } else {
+        input.classList.remove('erro');
+        input.classList.add('valido');
+    }
+}
+
+// Função para mostrar o popup
+function showPopup(message) {
+    var popup = document.getElementById('popup');
+    var popupMessage = document.getElementById('popup-message');
+    popupMessage.innerText = message;
+    popup.style.display = 'block';
+}
+
+// Função para fechar o popup
+function closePopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Redefinir Senha</h2>
+
+    {% if mensagem %}
+        <p style="color:red;">{{ mensagem }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <label for="email">Seu e-mail:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="nova_senha">Nova Senha:</label>
+        <input type="password" name="nova_senha" required><br>
+
+        <button type="submit">Atualizar Senha</button>
+    </form>
+
+    <p><a href="/">Voltar para o login</a></p>
+</div>
+{% endblock %}

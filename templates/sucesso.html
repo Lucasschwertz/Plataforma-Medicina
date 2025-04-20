@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Agendada</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta Agendada com Sucesso!</h1>
+        <p>O que você deseja fazer agora?</p>
+        
+        <div class="button-container">
+            <a href="/historico" class="btn">Ver Histórico de Consultas</a>
+            <a href="/agendar" class="btn">Agendar nova consulta</a>
+            <!-- Ajuste no botão de logout para usar a mesma classe de estilo -->
+            <a href="/logout" class="btn btn-logout">Sair</a>
+        </div>
+    </div>
+</body>
+</html>

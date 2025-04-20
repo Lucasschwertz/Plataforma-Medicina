@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Virtual</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta Virtual</h1>
+        <p>Você está na sala de consulta virtual. Escolha a opção desejada:</p>
+
+        <!-- Bloco para videochamada e botões -->
+        <div class="video-chat-container">
+            <!-- Tela de videochamada simulada -->
+            <div class="video-container">
+                <div class="video-screen">
+                    <div class="video-placeholder">
+                        <p>Vídeo da Consulta</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botões de controle da videochamada -->
+            <div class="controls-container">
+                <button class="btn">Entrar na Sala</button>
+                <button class="btn">Sair da Sala</button>
+                <button class="btn">Abrir Chat</button>
+                <button class="btn toggle-btn">Ligar/Desligar Câmera</button>
+                <button class="btn toggle-btn">Ligar/Desligar Microfone</button>
+            </div>
+        </div>
+
+        <!-- Botões para voltar às opções e sair -->
+        <div class="action-buttons">
+            <a href="/opcoes" class="btn">Voltar às Opções</a>
+            <a href="/logout" class="btn-logout">Sair</a>
+        </div>
+    </div>
+</body>
+</html>

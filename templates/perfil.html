@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Perfil do Usuário</h1>
+
+        {% if mensagem %}
+        <p style="color: green; text-align: center;">{{ mensagem }}</p>
+        {% endif %}
+        
+        <form action="/perfil" method="post">
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="{{ usuario }}" required><br>
+            
+            <label for="telefone">Telefone:</label>
+            <input type="text" name="telefone" value="{{ telefone }}" required><br>
+            
+            <label for="endereco">Endereço:</label>
+            <input type="text" name="endereco" value="{{ endereco }}" required><br>
+        
+            <label for="senha">Nova Senha:</label>
+            <input type="password" name="senha" required><br>
+        
+            <button type="submit">Atualizar</button>
+        </form>
+        
+        <!-- NOVO: botão de excluir conta -->
+        <form action="/excluir_conta" method="post" onsubmit="return confirm('Tem certeza que deseja excluir sua conta? Esta ação é irreversível.');" style="margin-top: 20px;">
+            <button type="submit" style="background-color: crimson; color: white;">Excluir minha conta</button>
+        </form>
+        
+        <a href="/logout" class="btn">Sair</a>
+        {% endblock %}

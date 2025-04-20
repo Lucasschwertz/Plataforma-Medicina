@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha uma Opção</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Sistema de Agendamento!</h1>
+        <p>Escolha uma das opções abaixo:</p>
+
+        {% if notificacao %}
+            <div class="alert alert-warning">{{ notificacao }}</div>
+        {% endif %}
+
+        <!-- Botões -->
+        <div class="button-container">
+            <a href="/agendar" class="btn">Agendar Consulta</a>
+            <a href="/historico" class="btn">Consultar Histórico de Consultas</a>
+            <a href="/consulta_virtual" class="btn">Participar da Consulta Virtual</a> <!-- Novo botão para consulta virtual -->
+            <a href="/logout" class="btn-logout">Sair</a>
+        </div>
+    </div>
+</body>
+</html>
